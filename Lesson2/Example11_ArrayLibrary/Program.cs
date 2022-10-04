@@ -1,5 +1,7 @@
 ﻿// мы определили массив из 10 элементов, заполнили массив случайными
 // числами (метод FillArray), а метод PrintArray нам его распечатал.
+// адаптировали решение прошлой задачи нахождения позиции нужного нам
+// элемента с использованием метода.
 
 void FillArray(int[] collection)
 {
@@ -24,7 +26,27 @@ void PrintArray(int[] col)
     }
 }
 
+int IndexOf(int[] collection, int find)
+{
+    int count = collection.Length;
+    int index = 0;
+    int position = 0;
+    while (index < count)
+    {
+        if(collection[index] == find)
+        {
+            position = index;
+        }
+        index++;
+    }
+    return position;
+}
+
 int[] array = new int[10];
 
 FillArray(array);
 PrintArray(array);
+Console.WriteLine();
+
+int pos = IndexOf(array, 4);
+Console.WriteLine(pos);
